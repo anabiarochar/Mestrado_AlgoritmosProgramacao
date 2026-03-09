@@ -1,8 +1,3 @@
-Projeto 1
-Aqui está uma proposta completa e estruturada para o seu relatório, utilizando os dados reais da tabela que forneceu e as normas acadêmicas comuns para a disciplina de Algoritmos.
-
----
-
 # Relatório de Análise de Desempenho de Algoritmos de Ordenação
 
 ## i) Metodologia
@@ -17,26 +12,23 @@ Aqui está uma proposta completa e estruturada para o seu relatório, utilizando
 **Massa de Dados:**
 
 * **Tamanhos dos Vetores:** 1.000, 10.000 e 100.000 elementos.
-* **Tipos de Entrada:** * **Aleatória:** Elementos distribuídos sem ordem prévia.
-* **Crescente:** Vetor já ordenado (melhor caso para alguns métodos).
-* **Decrescente:** Vetor em ordem inversa (pior caso para a maioria).
-
-
+* **Tipos de Entrada:** * **Aleatória:** Elementos distribuídos aleatóriamente.
+* **Crescente:** Vetor já ordenado em ordem crescente.
+* **Decrescente:** Vetor já ordenado em ordem inversa, decrescente.
 
 **Algoritmos e Tecnologia:**
 
 * **Linguagem:** Python 3.
 * **Algoritmos Implementados:** Bolha (Bubble Sort), Seleção (Selection Sort), Inserção (Insertion Sort), Quick Sort e Merge Sort.
-* **Bibliotecas de Análise:** `Pandas` para estruturação de dados e `Seaborn`/`Matplotlib` para visualização.
+* **Bibliotecas de Análise:** `Pandas` para estruturação de dados e `Seaborn`/`Matplotlib` para visualização dos dados.
 
 ---
 
 ## ii) Gráficos de Comparação de Tempos
 
-Conforme solicitado, o gráfico abaixo utiliza os dados reais da sua tabela (N=100.000) com **escala logarítmica** para permitir a comparação visual entre métodos rápidos e lentos.
+Como alguns métodos são muito lentos e outros muito rápidos, foi usado um gráfico especial (escala logarítmica) para conseguir permitir a comparação visual entre métodos rápidos e lentos. No gráfico abaixo, as barras mais baixas indicam os métodos melhores e mais rápidos.
 
 ```python
-# CÓDIGO PARA GERAR O GRÁFICO NO COLAB
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -66,9 +58,9 @@ plt.show()
 
 A análise dos dados revela uma divisão clara entre dois grupos de algoritmos:
 
-1. **Algoritmos Quadráticos ($O(n^2)$):** Bolha, Seleção e Inserção mostraram-se inviáveis para grandes volumes de dados (100.000). O **Bolha** foi o menos eficiente, atingindo **859 segundos** (aprox. 14 minutos) no pior caso. O **Seleção** é o mais estável entre os lentos, variando pouco entre os casos aleatórios e ordenados.
-2. **Algoritmos Log-Lineares ($O(n \log n)$):** Quick Sort e Merge Sort mantiveram tempos inferiores a **1 segundo** mesmo com 100.000 elementos. A eficiência do **Quick Sort** foi notável, sendo cerca de 3.000 vezes mais rápido que o Bolha no caso aleatório.
-3. **O Fenómeno da Inserção:** O algoritmo de **Inserção** apresentou o melhor desempenho absoluto de todo o experimento no cenário **Crescente (0,091s)**. Isso prova que, para listas quase ordenadas, um algoritmo simples pode superar métodos complexos como o Merge Sort.
+1. **Algoritmos Quadráticos ($O(n^2)$):** Ao olhar para os resultados, percebemos que os algoritmos Bolha, Seleção e Inserção apesar de funcionarem bem para listas pequenas, são inviáveis para grandes volumes de dados (100.000). O método Bolha foi o menos eficiente, atingindo 859 segundos (~14 minutos) no pior caso. O método Seleção é o mais estável entre os lentos, variando pouco entre os casos aleatórios e ordenados. Porém observa-se que o método Inserção apresentou o melhor desempenho de todo o experimento quando a lista estava já ordenada de forma crescente (0,091s). Isso mostra que, para listas ordenadas ou quase ordenadas, um algoritmo simples pode superar métodos complexos como Merge Sort ou Quick Sort.
+2. **Algoritmos Log-Lineares ($O(n \log n)$):** Os métodos Merge Sort e Quick Sort se mostraram muito eficientes com tempos inferiores à 1 segundo mesmo com 100.000 elementos. A eficiência do Quick Sort foi maior, chegando a ser aproximadamente 3.000 vezes mais rápido que o Bolha no caso aleatório. Os dois métodos foram bem constantes, levando aproximadamente o mesmo tempo independente se a lista está pré-ordenada ou não.
+
 
 ---
 
@@ -76,7 +68,7 @@ A análise dos dados revela uma divisão clara entre dois grupos de algoritmos:
 
 A teoria assintótica prevê como o tempo cresce conforme $N$ aumenta, e os dados obtidos validam estas previsões com precisão:
 
-* **Padrão Quadrático:** No método **Bolha (Aleatório)**, ao passar de 10.000 para 100.000 elementos (um aumento de 10x no tamanho), o tempo saltou de **6,87s** para **763,78s**. Isso representa um aumento de aproximadamente **111 vezes**, o que é condizente com a previsão $O(n^2)$, onde $10^2 = 100$.
-* **Padrão Log-Linear:** No **Merge Sort**, o aumento de 10x no tamanho (10k para 100k) resultou num aumento de tempo de **0,032s** para **0,512s** (aprox. 16 vezes). Este crescimento muito mais suave é o que a teoria define como eficiência $O(n \log n)$.
-* **Melhor Caso vs. Teoria:** A teoria indica que o **Inserção** tem melhor caso $O(n)$. Os dados confirmam: o tempo para 100.000 elementos no caso Crescente (**0,091s**) é ordens de magnitude menor que no caso Aleatório (**428,03s**), provando que a estrutura inicial dos dados pode alterar a classe de complexidade na prática.
-* **Conclusão:** Os resultados práticos no ambiente Google Colab alinham-se perfeitamente com a hierarquia de funções da análise assintótica, demonstrando que a escolha do algoritmo é mais impactante do que o poder do hardware para grandes massas de dados.
+* **Padrão Quadrático:** No método Bolha (Aleatório), ao passar de 10.000 para 100.000 elementos (um aumento de 10x no tamanho), o tempo saltou de 6,87s para 763,78s. Isso representa um aumento de aproximadamente 111 vezes, o que é condizente com a previsão $O(n^2)$, onde $10^2 = 100$.
+* **Padrão Log-Linear:** No Merge Sort, o aumento de 10x no tamanho (10k para 100k) resultou num aumento de tempo de 0,032s para 0,512s (aprox. 16 vezes). Este crescimento muito mais suave é o que a teoria define como eficiência $O(n \log n)$.
+* **Melhor Caso vs. Teoria:** A teoria indica que o Inserção tem melhor caso $O(n)$. Os dados confirmam: o tempo para 100.000 elementos no caso Crescente (0,091s) é ordens de magnitude menor que no caso Aleatório (428,03s), provando que a estrutura inicial dos dados pode alterar a classe de complexidade na prática.
+* **Conclusão:** Os resultados práticos alinham-se com a hierarquia de funções da análise assintótica, demonstrando que a escolha do algoritmo é mais impactante do que o poder do hardware para grandes massas de dados.
