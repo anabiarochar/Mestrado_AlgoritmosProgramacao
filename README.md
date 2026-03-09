@@ -12,7 +12,7 @@
 **Massa de Dados:**
 
 * **Tamanhos dos Vetores:** 1.000, 10.000 e 100.000 elementos.
-* **Tipos de Entrada:**:
+* **Tipos de Entrada:**
     * **Aleatória:** Elementos distribuídos aleatóriamente.
     * **Crescente:** Vetor já ordenado em ordem crescente.
     * **Decrescente:** Vetor já ordenado em ordem inversa, decrescente.
