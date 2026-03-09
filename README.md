@@ -81,7 +81,7 @@ plt.show()
 
 ```
 
-
+![texto alternativo](https://raw.githubusercontent.com/anabiarochar/Mestrado_AlgoritmosProgramacao/main/Projeto1/Imagens/Comparacao Desempenho_Aleatorios.png "título opcional")
 
 ---
 
@@ -92,7 +92,6 @@ A análise dos dados revela uma divisão clara entre dois grupos de algoritmos:
 1. **Algoritmos Quadráticos ( $O(n^2)$ ):** Ao olhar para os resultados, percebemos que os algoritmos Bolha, Seleção e Inserção apesar de funcionarem bem para listas pequenas, são inviáveis para grandes volumes de dados (100.000). O método Bolha foi o menos eficiente, atingindo 859 segundos (~14 minutos) no pior caso. O método Seleção é o mais estável entre os lentos, variando pouco entre os casos aleatórios e ordenados. Porém observa-se que o método Inserção apresentou o melhor desempenho de todo o experimento quando a lista estava já ordenada de forma crescente (0,091s). Isso mostra que, para listas ordenadas ou quase ordenadas, um algoritmo simples pode superar métodos complexos como Merge Sort ou Quick Sort.
 2. **Algoritmos Log-Lineares ( $O(n \log n)$ ):** Os métodos Merge Sort e Quick Sort se mostraram muito eficientes com tempos inferiores à 1 segundo mesmo com 100.000 elementos. A eficiência do Quick Sort foi maior, chegando a ser aproximadamente 3.000 vezes mais rápido que o Bolha no caso aleatório. Os dois métodos foram bem constantes, levando aproximadamente o mesmo tempo independente se a lista está pré-ordenada ou não.
 
-![Gráfico Comparativo](URL_ou_caminho_da_imagem "título opcional")
 
 
 ---
