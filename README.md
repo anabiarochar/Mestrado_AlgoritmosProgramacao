@@ -9,9 +9,8 @@
 * **Memória RAM:** 13GB.
 * **Sistema Operativo:** Ubuntu (Linux).
 
-**Massa de Dados:**
+**Massa de Dados:** Todos os vetores utilizados se encontram [nesta pasta](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/main/Projeto1/5_QuickSort.ipynb#:~:text=Vetores)
 
-Todos os vetores utilizados se encontram [nesta pasta](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/main/Projeto1/5_QuickSort.ipynb#:~:text=Vetores)
 * **Tamanhos dos Vetores:** 1.000, 10.000 e 100.000 elementos
 * **Tipos de Entrada:**
     * **Aleatória:** Elementos distribuídos aleatóriamente.
