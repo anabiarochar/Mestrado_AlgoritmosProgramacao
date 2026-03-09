@@ -20,7 +20,7 @@
 **Algoritmos e Tecnologia:**
 
 * **Linguagem:** Python 3.
-* **Algoritmos Implementados:** Bolha (Bubble Sort), Seleção (Selection Sort), Inserção (Insertion Sort), Quick Sort e Merge Sort. Todos os códigos utilizados se encontram [neste repositório](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/main/Projeto1/5_QuickSort.ipynb#:~:text=Projeto1)
+* **Algoritmos Implementados:** Bolha (Bubble Sort), Seleção (Selection Sort), Inserção (Insertion Sort), Quick Sort e Merge Sort. Todos os códigos utilizados se encontram [neste repositório](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/tree/main/Projeto1#:~:text=Projeto1)
 * **Bibliotecas de Análise:** `Requests` que permite o código acesse a internet para acessar os links com as bases de dados, `Time` que funciona como o cronômetro oficial para execução dos métodos, `Random` para geração de números randômicos, `Pandas` para estruturação de dados e `Seaborn`/`Matplotlib` para a visualização desses dados.
 
 ---
