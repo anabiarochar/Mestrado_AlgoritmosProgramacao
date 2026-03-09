@@ -81,7 +81,7 @@ plt.show()
 
 ```
 
-![texto alternativo](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/f05afe1d867582bb4105a1c14317c5ba5fc3821f/Projeto1/Imagens/Comparacao%20Desempenho_Aleatorios.png "texto opcional)
+![texto alternativo](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/f05afe1d867582bb4105a1c14317c5ba5fc3821f/Projeto1/Imagens/Comparacao%20Desempenho_Aleatorios.png "texto opcional")
 
 ---
 
