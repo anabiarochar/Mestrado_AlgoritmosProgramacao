@@ -27,61 +27,18 @@
 
 ## ii) Gráficos de Comparação de Tempos
 
-Como alguns métodos são muito lentos e outros muito rápidos, foi usado um gráfico especial (escala logarítmica) para conseguir permitir a comparação visual entre métodos rápidos e lentos. No gráfico abaixo, as barras mais baixas indicam os métodos melhores e mais rápidos.
+Foram gerados alguns gráficos para comparação entre os tempos de execução dos diferentes métodos quem mostram a discrepância entre métodos quadráticos e log-lineares. Os códigos usados para gerar os gráficos foram gerados com IA através de um prompt descritivo. Os códigos e gráficos gerados se encontram [neste notebook](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/main/Projeto1/Gráficos.ipynb#:~:text=Gráficos.ipynb).
+O gráfico abaixo utiliza os dados reais da sua tabela (N=100.000) com escala logarítmica para permitir a comparação visual entre métodos rápidos e lentos.
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+**Gráfico de Desempenho de Algoritmos por tipo de vetor**
+![Gráfico de Desempenho de Algoritmos por tipo de vetor](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/4d0761ab275ce3c13e04b93353a04ea377f94504/Projeto1/Imagens/Desempenho%20de%20Algoritmos%20por%20tipo%20de%20vetor.png)
 
-# 1. Dados extraídos da sua tabela
-data = {
-    'Metodo': ['Bolha', 'Bolha', 'Bolha', 'Seleção', 'Seleção', 'Seleção', 
-               'Inserção', 'Inserção', 'Inserção', 'Quick Sort', 'Quick Sort', 'Quick Sort', 
-               'Merge Sort', 'Merge Sort', 'Merge Sort'],
-    'Caso': ['Aleatório', 'Crescente', 'Decrescente'] * 5,
-    'Tamanho': [100000] * 15, # Focando no cenário mais crítico de 100k
-    'Tempo': [763.785, 233.165, 859.368,  # Bolha
-              350.004, 287.933, 296.649,  # Seleção
-              428.039, 0.091, 609.920,    # Inserção
-              0.449, 0.283, 0.271,        # Quick Sort
-              0.512, 0.272, 0.272]        # Merge Sort
-}
+**Gráfico de Algoritmos Eficientes x Quadraticos**
+![Gráfico de Algoritmos Eficientes x Quadraticos](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/4d0761ab275ce3c13e04b93353a04ea377f94504/Projeto1/Imagens/Algoritmos%20Eficientes%20x%20Quadraticos.png)
 
-df_100k = pd.DataFrame(data)
+**Gráfico de Comparação de Performance**
+![Gráfico de Comparação de Performance](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/4d0761ab275ce3c13e04b93353a04ea377f94504/Projeto1/Imagens/Comparac%CC%A7a%CC%83o%20de%20Performance.png)
 
-# 2. Configuração do gráfico
-plt.figure(figsize=(14, 7))
-sns.set_theme(style="whitegrid")
-
-# Criando o gráfico de barras
-plot = sns.barplot(data=df_100k, x='Metodo', y='Tempo', hue='Caso', palette='viridis')
-
-# 3. APLICANDO ESCALA LOGARÍTMICA
-plot.set_yscale("log")
-
-# Customização de títulos e labels
-plt.title('Comparação de Performance (N = 100.000) - Escala Logarítmica', fontsize=16, fontweight='bold')
-plt.ylabel('Tempo de Execução (segundos) - [LOG]', fontsize=12)
-plt.xlabel('Método de Ordenação', fontsize=12)
-
-# Adicionando os valores em cima das barras para facilitar a leitura
-for p in plot.patches:
-    if p.get_height() > 0:
-        plot.annotate(format(p.get_height(), '.3f'), 
-                      (p.get_x() + p.get_width() / 2., p.get_height()), 
-                      ha = 'center', va = 'center', 
-                      xytext = (0, 9), 
-                      textcoords = 'offset points',
-                      fontsize=9, fontweight='bold')
-
-plt.legend(title='Estado Inicial do Vetor', bbox_to_anchor=(1.05, 1), loc='upper left')
-plt.tight_layout()
-plt.show()
-
-```
-**Gráfico de comparação de desempenho dos métodos utilizando dados aleatórios**
-![Gráfico de comparação de desempenho dos métodos utilizando dados aleatórios](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/f05afe1d867582bb4105a1c14317c5ba5fc3821f/Projeto1/Imagens/Comparacao%20Desempenho_Aleatorios.png)
 
 ---
 
