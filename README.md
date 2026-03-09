@@ -45,9 +45,9 @@ A principal conclusão ao observar os dois gráficos lado a lado é a diferença
 
 * **Gráfico de Comparação de Performance**
 
-> Esta análise foca no gráfico de barras gerado para a carga de 100.000 elementos, utilizando uma escala logarítmica. O uso dessa escala é necessário para que seja possível visualizar, no mesmo quadro, a grande diferença de performance entre os métodos mais simples e os mais avançados. No gráfico é possível visualizar como o método bolha é o menos eficiente para grandes massas de dados e também que os métodos Merge Sort e Quick Sort são bem estáveis independente da ordenação inicial dos dados.
+  Esta análise foca no gráfico de barras gerado para a carga de 100.000 elementos, utilizando uma escala logarítmica. O uso dessa escala é necessário para que seja possível visualizar, no mesmo quadro, a grande diferença de performance entre os métodos mais simples e os mais avançados. No gráfico é possível visualizar como o método bolha é o menos eficiente para grandes massas de dados e também que os métodos Merge Sort e Quick Sort são bem estáveis independente da ordenação inicial dos dados.
 
-> ![Gráfico de Comparação de Performance](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/4d0761ab275ce3c13e04b93353a04ea377f94504/Projeto1/Imagens/Comparac%CC%A7a%CC%83o%20de%20Performance.png)
+  ![Gráfico de Comparação de Performance](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/4d0761ab275ce3c13e04b93353a04ea377f94504/Projeto1/Imagens/Comparac%CC%A7a%CC%83o%20de%20Performance.png)
 
 
 ---
