@@ -34,24 +34,54 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# 1. Dados extraídos da sua tabela
 data = {
-    'Método': ['Bolha', 'Bolha', 'Bolha', 'Seleção', 'Seleção', 'Seleção', 
+    'Metodo': ['Bolha', 'Bolha', 'Bolha', 'Seleção', 'Seleção', 'Seleção', 
                'Inserção', 'Inserção', 'Inserção', 'Quick Sort', 'Quick Sort', 'Quick Sort', 
                'Merge Sort', 'Merge Sort', 'Merge Sort'],
     'Caso': ['Aleatório', 'Crescente', 'Decrescente'] * 5,
-    'Tempo (s)': [763.78, 233.16, 859.36, 350.00, 287.93, 296.64, 
-                  428.03, 0.091, 609.92, 0.449, 0.283, 0.271, 0.512, 0.272, 0.272]
+    'Tamanho': [100000] * 15, # Focando no cenário mais crítico de 100k
+    'Tempo': [763.785, 233.165, 859.368,  # Bolha
+              350.004, 287.933, 296.649,  # Seleção
+              428.039, 0.091, 609.920,    # Inserção
+              0.449, 0.283, 0.271,        # Quick Sort
+              0.512, 0.272, 0.272]        # Merge Sort
 }
 
-df = pd.DataFrame(data)
-plt.figure(figsize=(12, 6))
+df_100k = pd.DataFrame(data)
+
+# 2. Configuração do gráfico
+plt.figure(figsize=(14, 7))
 sns.set_theme(style="whitegrid")
-g = sns.barplot(data=df, x='Método', y='Tempo (s)', hue='Caso')
-g.set_yscale("log")
-plt.title('Comparação de Desempenho (N = 100.000) - Escala Logarítmica')
+
+# Criando o gráfico de barras
+plot = sns.barplot(data=df_100k, x='Metodo', y='Tempo', hue='Caso', palette='viridis')
+
+# 3. APLICANDO ESCALA LOGARÍTMICA
+plot.set_yscale("log")
+
+# Customização de títulos e labels
+plt.title('Comparação de Performance (N = 100.000) - Escala Logarítmica', fontsize=16, fontweight='bold')
+plt.ylabel('Tempo de Execução (segundos) - [LOG]', fontsize=12)
+plt.xlabel('Método de Ordenação', fontsize=12)
+
+# Adicionando os valores em cima das barras para facilitar a leitura
+for p in plot.patches:
+    if p.get_height() > 0:
+        plot.annotate(format(p.get_height(), '.3f'), 
+                      (p.get_x() + p.get_width() / 2., p.get_height()), 
+                      ha = 'center', va = 'center', 
+                      xytext = (0, 9), 
+                      textcoords = 'offset points',
+                      fontsize=9, fontweight='bold')
+
+plt.legend(title='Estado Inicial do Vetor', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
 plt.show()
 
 ```
+
+
 
 ---
 
@@ -61,6 +91,8 @@ A análise dos dados revela uma divisão clara entre dois grupos de algoritmos:
 
 1. **Algoritmos Quadráticos ( $O(n^2)$ ):** Ao olhar para os resultados, percebemos que os algoritmos Bolha, Seleção e Inserção apesar de funcionarem bem para listas pequenas, são inviáveis para grandes volumes de dados (100.000). O método Bolha foi o menos eficiente, atingindo 859 segundos (~14 minutos) no pior caso. O método Seleção é o mais estável entre os lentos, variando pouco entre os casos aleatórios e ordenados. Porém observa-se que o método Inserção apresentou o melhor desempenho de todo o experimento quando a lista estava já ordenada de forma crescente (0,091s). Isso mostra que, para listas ordenadas ou quase ordenadas, um algoritmo simples pode superar métodos complexos como Merge Sort ou Quick Sort.
 2. **Algoritmos Log-Lineares ( $O(n \log n)$ ):** Os métodos Merge Sort e Quick Sort se mostraram muito eficientes com tempos inferiores à 1 segundo mesmo com 100.000 elementos. A eficiência do Quick Sort foi maior, chegando a ser aproximadamente 3.000 vezes mais rápido que o Bolha no caso aleatório. Os dois métodos foram bem constantes, levando aproximadamente o mesmo tempo independente se a lista está pré-ordenada ou não.
+
+![Gráfico Comparativo](URL_ou_caminho_da_imagem "título opcional")
 
 
 ---
