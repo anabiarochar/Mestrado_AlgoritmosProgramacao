@@ -83,6 +83,9 @@ plt.show()
 
 ![texto alternativo](https://raw.githubusercontent.com/anabiarochar/Mestrado_AlgoritmosProgramacao/main/Projeto1/Imagens/ComparacaoDesempenho_Aleatorios.png)
 
+![texto alternativo]([https://raw.githubusercontent.com/anabiarochar/Mestrado_AlgoritmosProgramacao/main/Projeto1/Imagens/ComparacaoDesempenho_Aleatorios.png](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/f05afe1d867582bb4105a1c14317c5ba5fc3821f/Projeto1/Imagens/Comparacao%20Desempenho_Aleatorios.png)
+
+
 ---
 
 ## iii) Análise Crítica sobre a Eficiência
