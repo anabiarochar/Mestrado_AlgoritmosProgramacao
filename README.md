@@ -1,1 +1,82 @@
 Projeto 1
+Aqui está uma proposta completa e estruturada para o seu relatório, utilizando os dados reais da tabela que forneceu e as normas acadêmicas comuns para a disciplina de Algoritmos.
+
+---
+
+# Relatório de Análise de Desempenho de Algoritmos de Ordenação
+
+## i) Metodologia
+
+**Equipamento Utilizado:**
+
+* **Plataforma:** Google Colab (Ambiente de Nuvem).
+* **Processador:** Intel(R) Xeon(R) CPU @ 2.20GHz (Padrão da VM do Colab).
+* **Memória RAM:** 13GB.
+* **Sistema Operativo:** Ubuntu (Linux).
+
+**Massa de Dados:**
+
+* **Tamanhos dos Vetores:** 1.000, 10.000 e 100.000 elementos.
+* **Tipos de Entrada:** * **Aleatória:** Elementos distribuídos sem ordem prévia.
+* **Crescente:** Vetor já ordenado (melhor caso para alguns métodos).
+* **Decrescente:** Vetor em ordem inversa (pior caso para a maioria).
+
+
+
+**Algoritmos e Tecnologia:**
+
+* **Linguagem:** Python 3.
+* **Algoritmos Implementados:** Bolha (Bubble Sort), Seleção (Selection Sort), Inserção (Insertion Sort), Quick Sort e Merge Sort.
+* **Bibliotecas de Análise:** `Pandas` para estruturação de dados e `Seaborn`/`Matplotlib` para visualização.
+
+---
+
+## ii) Gráficos de Comparação de Tempos
+
+Conforme solicitado, o gráfico abaixo utiliza os dados reais da sua tabela (N=100.000) com **escala logarítmica** para permitir a comparação visual entre métodos rápidos e lentos.
+
+```python
+# CÓDIGO PARA GERAR O GRÁFICO NO COLAB
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+data = {
+    'Método': ['Bolha', 'Bolha', 'Bolha', 'Seleção', 'Seleção', 'Seleção', 
+               'Inserção', 'Inserção', 'Inserção', 'Quick Sort', 'Quick Sort', 'Quick Sort', 
+               'Merge Sort', 'Merge Sort', 'Merge Sort'],
+    'Caso': ['Aleatório', 'Crescente', 'Decrescente'] * 5,
+    'Tempo (s)': [763.78, 233.16, 859.36, 350.00, 287.93, 296.64, 
+                  428.03, 0.091, 609.92, 0.449, 0.283, 0.271, 0.512, 0.272, 0.272]
+}
+
+df = pd.DataFrame(data)
+plt.figure(figsize=(12, 6))
+sns.set_theme(style="whitegrid")
+g = sns.barplot(data=df, x='Método', y='Tempo (s)', hue='Caso')
+g.set_yscale("log")
+plt.title('Comparação de Desempenho (N = 100.000) - Escala Logarítmica')
+plt.show()
+
+```
+
+---
+
+## iii) Análise Crítica sobre a Eficiência
+
+A análise dos dados revela uma divisão clara entre dois grupos de algoritmos:
+
+1. **Algoritmos Quadráticos ($O(n^2)$):** Bolha, Seleção e Inserção mostraram-se inviáveis para grandes volumes de dados (100.000). O **Bolha** foi o menos eficiente, atingindo **859 segundos** (aprox. 14 minutos) no pior caso. O **Seleção** é o mais estável entre os lentos, variando pouco entre os casos aleatórios e ordenados.
+2. **Algoritmos Log-Lineares ($O(n \log n)$):** Quick Sort e Merge Sort mantiveram tempos inferiores a **1 segundo** mesmo com 100.000 elementos. A eficiência do **Quick Sort** foi notável, sendo cerca de 3.000 vezes mais rápido que o Bolha no caso aleatório.
+3. **O Fenómeno da Inserção:** O algoritmo de **Inserção** apresentou o melhor desempenho absoluto de todo o experimento no cenário **Crescente (0,091s)**. Isso prova que, para listas quase ordenadas, um algoritmo simples pode superar métodos complexos como o Merge Sort.
+
+---
+
+## iv) Análise Assintótica X Tempos Obtidos
+
+A teoria assintótica prevê como o tempo cresce conforme $N$ aumenta, e os dados obtidos validam estas previsões com precisão:
+
+* **Padrão Quadrático:** No método **Bolha (Aleatório)**, ao passar de 10.000 para 100.000 elementos (um aumento de 10x no tamanho), o tempo saltou de **6,87s** para **763,78s**. Isso representa um aumento de aproximadamente **111 vezes**, o que é condizente com a previsão $O(n^2)$, onde $10^2 = 100$.
+* **Padrão Log-Linear:** No **Merge Sort**, o aumento de 10x no tamanho (10k para 100k) resultou num aumento de tempo de **0,032s** para **0,512s** (aprox. 16 vezes). Este crescimento muito mais suave é o que a teoria define como eficiência $O(n \log n)$.
+* **Melhor Caso vs. Teoria:** A teoria indica que o **Inserção** tem melhor caso $O(n)$. Os dados confirmam: o tempo para 100.000 elementos no caso Crescente (**0,091s**) é ordens de magnitude menor que no caso Aleatório (**428,03s**), provando que a estrutura inicial dos dados pode alterar a classe de complexidade na prática.
+* **Conclusão:** Os resultados práticos no ambiente Google Colab alinham-se perfeitamente com a hierarquia de funções da análise assintótica, demonstrando que a escolha do algoritmo é mais impactante do que o poder do hardware para grandes massas de dados.
