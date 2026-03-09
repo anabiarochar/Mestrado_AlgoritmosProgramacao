@@ -11,7 +11,8 @@
 
 **Massa de Dados:**
 
-* **Tamanhos dos Vetores:** 1.000, 10.000 e 100.000 elementos.
+Todos os vetores utilizados se encontram [nesta pasta](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/main/Projeto1/5_QuickSort.ipynb#:~:text=Vetores)
+* **Tamanhos dos Vetores:** 1.000, 10.000 e 100.000 elementos
 * **Tipos de Entrada:**
     * **Aleatória:** Elementos distribuídos aleatóriamente.
     * **Crescente:** Vetor já ordenado em ordem crescente.
@@ -21,7 +22,6 @@
 
 * **Linguagem:** Python 3.
 * **Algoritmos Implementados:** Bolha (Bubble Sort), Seleção (Selection Sort), Inserção (Insertion Sort), Quick Sort e Merge Sort. Todos os códigos utilizados se encontram [neste repositório](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/main/Projeto1/5_QuickSort.ipynb#:~:text=Projeto1)
-* **Vetores Utilizados:** Os vetores de 1000, 10000 e 100000 elementos aleatórios, crescentes e decrescentes estão [nesta pasta](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/main/Projeto1/5_QuickSort.ipynb#:~:text=Vetores)
 * **Bibliotecas de Análise:** `Requests` que permite o código acesse a internet para acessar os links com as bases de dados, `Time` que funciona como o cronômetro oficial para execução dos métodos, `Random` para geração de números randômicos, `Pandas` para estruturação de dados e `Seaborn`/`Matplotlib` para a visualização desses dados.
 
 ---
