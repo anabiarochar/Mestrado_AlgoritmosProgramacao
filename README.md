@@ -20,8 +20,8 @@
 **Algoritmos e Tecnologia:**
 
 * **Linguagem:** Python 3.
-* **Algoritmos Implementados:** Bolha (Bubble Sort), Seleção (Selection Sort), Inserção (Insertion Sort), Quick Sort e Merge Sort.
-* **Bibliotecas de Análise:** `Pandas` para estruturação de dados e `Seaborn`/`Matplotlib` para visualização dos dados.
+* **Algoritmos Implementados:** Bolha (Bubble Sort), Seleção (Selection Sort), Inserção (Insertion Sort), Quick Sort e Merge Sort. Todos os códigos utilizados se encontrar no repositório: (https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/edit/main/README.md#:~:text=Projeto1)
+* **Bibliotecas de Análise:** `Requests` que permite o código acesse a internet para acessar os links com as bases de dados, `Time` que funciona como o cronômetro oficial para execução dos métodos, `Random` para geração de números randômicos, `Pandas` para estruturação de dados e `Seaborn`/`Matplotlib` para a visualização desses dados.
 
 ---
 
@@ -80,8 +80,8 @@ plt.tight_layout()
 plt.show()
 
 ```
-
-![texto alternativo](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/f05afe1d867582bb4105a1c14317c5ba5fc3821f/Projeto1/Imagens/Comparacao%20Desempenho_Aleatorios.png "texto opcional")
+**Gráfico de comparação de desempenho dos métodos utilizando dados aleatórios**
+![Gráfico de comparação de desempenho dos métodos utilizando dados aleatórios](https://github.com/anabiarochar/Mestrado_AlgoritmosProgramacao/blob/f05afe1d867582bb4105a1c14317c5ba5fc3821f/Projeto1/Imagens/Comparacao%20Desempenho_Aleatorios.png)
 
 ---
 
